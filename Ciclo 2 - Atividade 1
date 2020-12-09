@@ -1,0 +1,8 @@
+#encoding: utf-8
+print ('Calcula a idade em anos, meses e dias')
+impressão ('----------------------------------------------- - ')
+idias = int (input ('Digite sua idade em dias:'))
+anos = int (idias / 365)
+mes = int ((idias% 365) / 30)
+dia = int ((idias% 365)% 30)
+imprimir ('Você tem', anos, 'anos,', mes, 'mêses e', dia, 'dias')
