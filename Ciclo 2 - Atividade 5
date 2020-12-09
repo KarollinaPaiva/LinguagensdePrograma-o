@@ -1,0 +1,4 @@
+#encoding: utf-8
+
+frase = str (raw_input ('Escreva uma frase:'))
+print ('Uma frase invertida fica:' + ('{}'). format (frase) [:: - 1])
