@@ -1,0 +1,99 @@
+# - * - codificação: latin1 - * -
+#encoding: utf-8
+
+de matemática import sqrt
+da hora da importação
+
+def checkIntNumber (n):
+    return int (n) == n
+
+def verificaNumeroPrimoV1 (n, showStatusFlag = False):
+    se n == 2:
+        retornar verdadeiro
+    elif (n == 1) ou (n% 2 == 0) ou (checkIntNumber (sqrt (n))):
+        retorna falso
+    outro:
+        primoFlag = True
+        limite = int (sqrt (n))
+
+        se limite% 2 == 0:
+            d = limite + 1
+        outro:
+            d = limite
+        o = n / d
+        if (o <= d):
+            return primoFlag
+
+        d = 1
+        divisoes = 0
+        contagem = 0
+        enquanto (d <= limite) e (divisoes <= 2):
+            contagem = contagem + 1
+            if (n% d == 0):
+                divisoes = divisoes + 1
+                if (divisoes == 2) e (d! = n):
+                    primoFlag = False
+                    pausa
+            d = d + 2
+
+        if showStatusFlag:
+            imprimir 'n:', n, 'd:', d, 'contar:', contar, 'divisoes:', divisoes
+
+        return primoFlag
+
+def verificaNumeroPrimoV2 (n, showStatusFlag = False):
+    se n == 2:
+        retornar verdadeiro
+    elif (n == 1) ou (n% 2 == 0) ou (checkIntNumber (sqrt (n))):
+        retorna falso
+    outro:
+        primoFlag = True
+        limite = int (sqrt (n))
+
+        se limite% 2 == 0:
+            d = limite + 1
+        outro:
+            d = limite
+        o = n / d
+        if (o <= d):
+            return primoFlag
+
+        d, o, r = 1, 0, 0
+
+        divisoes = 0
+        contagem = 0
+        enquanto (d <= limite) e (divisoes <= 2):
+            contagem = contagem + 1
+
+            r = n% d
+
+            if (r == 0):
+                divisoes = divisoes + 1
+                if (divisoes == 2) e (d! = n):
+                    primoFlag = False
+                    pausa
+            outro:
+                o = n / d
+                if (o <= d):
+                    primoFlag = True
+                    pausa
+
+            d = d + 2
+
+        if showStatusFlag:
+            imprimir 'n:', n, 'd:', d, 'o:', o, 'r:', r, 'contar:', contar, 'divisoes:', divisoes
+        return primoFlag
+
+def primos (max):
+    primosArr = []
+    para i no intervalo (1, máx + 1):
+        se verificaNumeroPrimoV1 (i):
+            primosArr.append (i)
+            imprimir i, '- Verdadeiro'
+        outro:
+            imprimir i, '- Falso'
+    return primosArr
+
+tp1 = tempo ()
+imprimir primos (100)
+tp2 = tempo ()
